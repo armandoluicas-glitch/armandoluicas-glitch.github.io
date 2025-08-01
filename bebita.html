@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz día de la novia, amorcito</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      overflow: hidden;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d6336c;
+      margin-bottom: 10px;
+      z-index: 1;
+    }
+
+    .teddy {
+      margin: 20px 0;
+      z-index: 1;
+    }
+
+    .teddy img {
+      max-width: 200px;
+      height: auto;
+      animation: pulse 2s infinite;
+    }
+
+    .text-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .text-container .ramo-left,
+    .text-container .ramo-right {
+      position: absolute;
+      width: 80px;
+      height: auto;
+      opacity: 0.8;
+      animation: gentle-sway 3s ease-in-out infinite;
+    }
+
+    .text-container .ramo-left {
+      left: -100px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-15deg);
+    }
+
+    .text-container .ramo-right {
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%) rotate(15deg) scaleX(-1);
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(214, 51, 108, 0.2);
+      border: 2px solid rgba(214, 51, 108, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin: 0;
+      color: #555;
+    }
+
+    .flowers-left,
+    .flowers-right {
+      position: absolute;
+      top: 120px;
+      width: 120px;
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .flowers-left {
+      left: 20px;
+      animation: gentle-sway 4s ease-in-out infinite;
+    }
+
+    .flowers-right {
+      right: 20px;
+      transform: scaleX(-1);
+      animation: gentle-sway 4s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes gentle-sway {
+      0%, 100% { transform: translateY(-50%) rotate(-15deg); }
+      50% { transform: translateY(-50%) rotate(-10deg); }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive para móviles */
+    @media (max-width: 768px) {
+      .text-container .ramo-left {
+        left: -60px;
+        width: 60px;
+      }
+      
+      .text-container .ramo-right {
+        right: -60px;
+        width: 60px;
+      }
+      
+      .message-box {
+        margin: 0 20px;
+        padding: 20px 25px;
+      }
+      
+      h1 {
+        font-size: 2em;
+        margin: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 10 + 's';
+        heart.style.background = ['#ff4d4d', '#ff6699', '#ff1a66'][Math.floor(Math.random() * 3)];
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+
+  <img src="ramito.png" alt="decoración izquierda" class="flowers-left">
+  <img src="ramito.png" alt="decoración derecha" class="flowers-right">
+
+  <h1>Feliz día de la novia, amorcito 💖</h1>
+
+  <div class="teddy">
+    <img src="oseto.webp" alt="Osito tierno">
+  </div>
+
+  <div class="text-container">
+    <img src="ramo 1.png" alt="Ramo 1 decorativo" class="ramo-left">
+    <div class="message-box">
+      <p>
+        Mi amorcito debe ser fuerte en estos momentos difíciles,<br>
+        así que mi bb debe dormir bien y no estar en TikTok agg.<br>
+        Te amo amor, aunque no nos podamos ver.
+      </p>
+    </div>
+    <img src="ramo 2.png" alt="Ramo 2 decorativo" class="ramo-right">
+  </div>
+
+</body>
+</html>
